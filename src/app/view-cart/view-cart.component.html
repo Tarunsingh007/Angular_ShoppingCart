@@ -1,0 +1,24 @@
+<div class="container">
+  <div *ngIf="items?.length>0 else noItems">
+    <div *ngFor="let item of items" class="cartItem-container">
+      <div class="productImage">
+        <span><img class="img" src="{{item.img}}" alt="" height="80px"></span>
+      </div>
+      <div class="productDetails">
+        <span>{{item.name}}</span>
+      </div>
+      <div class="d-flex justify-content-center align-items-center mr-1">
+        <button class="btn btn-success mr-4">buy</button>
+        <p class="lead delete btn btn-danger" (click)="deleteItems(item)" *ngIf="item.quantity==1">Delete</p>
+        <p class="lead mr-1" *ngIf="item.quantity>1">{{item.quantity}}</p>
+        <p class="lead btn btn-danger" (click)="deleteItems(item)" *ngIf="item.quantity>1">-</p>
+        <p class="lead btn btn-danger" (click)="addItems(item)" *ngIf="item.quantity>1">+</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <ng-template #noItems>
+      <h1>No Items in the Cart</h1>
+    </ng-template>
+  </div>
+</div>

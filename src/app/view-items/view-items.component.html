@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <!-- img-card -->
+    <div *ngFor="let item of items" class="col-lg-3 d-flex justify-content-center">
+      <div class="img-card">
+        <p class="lead h2">{{item.name}}</p>
+        <img class="img img-fluid" src="{{item.img}}" alt="">
+        <div class="d-flex justify-content-between">  
+          <button class="btn btn-danger" (click)="addToCart(item)">Add</button>
+          <button class="btn btn-success">Buy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

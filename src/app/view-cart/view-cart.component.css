@@ -1,0 +1,16 @@
+.delete{
+  transition: all 0.4s ease-in-out;
+}
+.delete:hover{
+  cursor: pointer;
+  text-shadow: 2px 2px black;
+}
+.cartItem-container{
+  background-color: #777;
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: 1fr 8fr 3fr;
+}
+.productDetails{
+  padding: 10px;
+}
